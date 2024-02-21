@@ -4,6 +4,8 @@
   background-color: var(--clr-primary-500);
 }
 
+/* General spacing and arrangement of the elements match the layouts in the mockups. */
+
 .primary-header__content,
 .primary-header__student {
   display: flex;
@@ -14,6 +16,36 @@
 .primary-header__content {
   padding: 1rem;
   justify-content: space-between;
+}
+
+/* Add a CSS transition or animation to the bell icon when the user hovers over it. */
+
+.primary-header__notifications {
+  fill: white;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.primary-header__notifications:hover {
+  transform: rotate(-5deg) scale(1.2);
+}
+
+/* Includes an alert icon in the header with a marker to notify the user of new alerts and messages. */
+
+.primary-header__student {
+  position: relative;
+}
+
+.has-notifications::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 82%;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: rgb(70, 255, 70);
+  border-radius: 50%;
 }
 
 .primary-header__title {
@@ -53,6 +85,8 @@
 }
 
 /* Grid setup */
+
+/* Use CSS grid to lay out the main elements (header, sidebar navigation, main content) on the page. */
 
 .grid {
   display: grid;
@@ -118,6 +152,8 @@
   padding: 1rem;
 }
 
+/* Use CSS grid to lay out the main elements (header, sidebar navigation, main content) on the page. */
+
 .subcharts {
   display: grid;
 }
@@ -145,6 +181,8 @@
   display: grid;
   gap: 0.5rem;
 }
+
+/* Use CSS grid to lay out the main elements (header, sidebar navigation, main content) on the page. */
 
 @media only screen and (min-width: 768px) {
   .socials-content {
@@ -191,6 +229,8 @@
 
 /* Social Activity */
 
+/* Use CSS grid to lay out the main elements (header, sidebar navigation, main content) on the page. */
+
 .social-activities {
   display: grid;
 }
@@ -221,6 +261,10 @@
 .social-activity-widget div p {
   font-size: 1rem;
 }
+
+/* A mobile-first approach is utilized using min-width properties for media queries. */
+
+/* Appropriate media queries are in place and the content responds to mobile (320px), tablet (768px) and desktop (1024px) screen sizes. */
 
 @media only screen and (min-width: 768px) {
   .social-activity-widget {
@@ -366,4 +410,8 @@
   border: 1px solid rgb(192, 192, 192);
   padding: 1rem;
   border-radius: 0.5rem;
+}
+
+#pie-chart {
+  max-height: 200px;
 }

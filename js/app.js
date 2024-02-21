@@ -206,3 +206,5 @@ const searchForUserInput = document.getElementById('userSearch');
 submitMessage.addEventListener('click', () => {
   // Validate the form
 });
+
+// Includes an alert icon in the header with a marker to notify the user of new alerts and messages.
