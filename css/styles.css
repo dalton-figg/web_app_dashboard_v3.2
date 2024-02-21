@@ -224,7 +224,13 @@ General spacing and arrangement of the elements match the layout of the widget i
   background: rgb(241, 241, 241);
   border: 1px solid rgb(192, 192, 192);
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
+}
+
+@media only screen and (min-width: 1024px){
+  .social-widget{
+    padding: 1rem;
+  }
 }
 
 .social-title {
@@ -244,8 +250,14 @@ General spacing and arrangement of the elements match the layout of the widget i
 }
 
 .social-count {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 200;
+}
+
+@media only screen and (min-width: 1024px) {
+  .social-count {
+    font-size: 3rem;
+  }
 }
 
 /* Social Activity */
@@ -440,5 +452,3 @@ General spacing and arrangement of the elements matches the layout of the widget
 #pie-chart {
   max-height: 300px;
 }
-
-

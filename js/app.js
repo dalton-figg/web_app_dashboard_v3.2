@@ -234,7 +234,8 @@ const closeAlert = document.getElementById('closeAlert');
 
 closeAlert.addEventListener('click', () => alertBanner.remove());
 
-/* TODO::
+/* 
+TODO::
    - FIX TRAFFIC TAB BUTTONS BUG
    - ADD HOVER EFFECTS TO CLOSING NOTIFICATIONS MODAL
    - LOCAL STORAGE FOR SETTINGS
@@ -243,4 +244,5 @@ closeAlert.addEventListener('click', () => alertBanner.remove());
    - DISPLAY ERROR MESSAGES IF INPUTS ARE BLANK IN MESSAGE 
    - CANCEL BUTTON CLEARS LOCAL STORAGE
    - SVG TITLE/ACCESSIBILITY
+   - ADD ARROW TO RECENT ACTIVITY AFTER PSUEDO ELEMENT
 */
