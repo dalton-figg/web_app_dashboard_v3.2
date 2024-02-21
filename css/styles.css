@@ -44,7 +44,7 @@
   display: block;
   width: 10px;
   height: 10px;
-  background: rgb(70, 255, 70);
+  background: rgb(255, 56, 56);
   border-radius: 50%;
 }
 
@@ -106,11 +106,26 @@
 }
 
 .alert {
+  display: flex;
+  justify-content: space-between;
   margin: 1.5rem;
   margin: 0.5rem;
   padding: 1rem;
   color: white;
   background: var(--clr-primary-500);
+  border-radius: 0.5rem;
+}
+
+.notifications-modal {
+  display: none;
+  position: absolute;
+  left: -40%;
+  top: 120%;
+  background: grey;
+  max-width: 150px;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 1px solid white;
   border-radius: 0.5rem;
 }
 
@@ -143,6 +158,7 @@
   appearance: none;
   background: none;
   border: none;
+  cursor: pointer;
   font-size: 1.125rem;
 }
 

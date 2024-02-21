@@ -108,6 +108,8 @@ const resetButtonClasses = () =>
 
 // Add active class to clicked button
 
+// TODO: check is button not parent
+
 const setActiveButton = (target) => (target.className += ' active');
 
 // Updates the data based on which button you selected
@@ -208,3 +210,28 @@ submitMessage.addEventListener('click', () => {
 });
 
 // Includes an alert icon in the header with a marker to notify the user of new alerts and messages.
+
+const notificationBell = document.querySelector(
+  '.primary-header__notifications'
+);
+
+const notificationModal = document.querySelector('.notifications-modal');
+
+const notificationsClose = document.getElementById('closeNotifications');
+
+const openNotificationsModal = () =>
+  (notificationModal.style.display = 'block');
+
+const closeNotificationsModal = () =>
+  (notificationModal.style.display = 'none');
+
+notificationBell.addEventListener('click', () => openNotificationsModal());
+
+notificationsClose.addEventListener('click', () => closeNotificationsModal());
+
+// Includes alert banner that user can close.
+
+const alertBanner = document.querySelector('.alert');
+const closeAlert = document.getElementById('closeAlert');
+
+closeAlert.addEventListener('click', () => alertBanner.remove());
