@@ -197,3 +197,11 @@ trafficButtonsParent.addEventListener('click', (e) => {
   setActiveButton(e.target);
   updateData(e.target.innerHTML);
 });
+
+// Form stuff
+
+const submitMessage = document.getElementById('submitMessage');
+
+submitMessage.addEventListener('click', () => {
+    // Validate the form
+})
