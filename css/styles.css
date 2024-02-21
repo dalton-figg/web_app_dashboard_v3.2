@@ -187,6 +187,11 @@
 
 /* Socials Subgrid */
 
+/* Includes a widget (or three separate widgets) that display social network stats for three social networks.
+SVG icons are added as inline SVG's.
+SVG fill colors have been changed to match the mockups.
+General spacing and arrangement of the elements match the layout of the widget in the mockup. */
+
 .socials {
   display: grid;
   gap: 1.5rem;
@@ -256,6 +261,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Includes a widget that lists out new members and displays an avatar, member name, email and join date for each member.
+Includes a Recent Activity widget that displays an avatar, type of activity, and time since activity for each member.
+General spacing and arrangement of the elements matches the layout of the widgets in the mockup. */
 
 .social-activity-container {
   display: flex;
@@ -429,5 +438,7 @@
 }
 
 #pie-chart {
-  max-height: 200px;
+  max-height: 300px;
 }
+
+

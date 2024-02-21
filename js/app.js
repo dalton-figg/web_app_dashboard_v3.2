@@ -108,8 +108,6 @@ const resetButtonClasses = () =>
 
 // Add active class to clicked button
 
-// TODO: check is button not parent
-
 const setActiveButton = (target) => (target.className += ' active');
 
 // Updates the data based on which button you selected
@@ -235,3 +233,14 @@ const alertBanner = document.querySelector('.alert');
 const closeAlert = document.getElementById('closeAlert');
 
 closeAlert.addEventListener('click', () => alertBanner.remove());
+
+/* TODO::
+   - FIX TRAFFIC TAB BUTTONS BUG
+   - ADD HOVER EFFECTS TO CLOSING NOTIFICATIONS MODAL
+   - LOCAL STORAGE FOR SETTINGS
+   - MESSAGE FOR USER AUTO COMPLETION
+   - SEND BUTTON FOR MESSAGE, INC. CONFIRMATION MESSAGE
+   - DISPLAY ERROR MESSAGES IF INPUTS ARE BLANK IN MESSAGE 
+   - CANCEL BUTTON CLEARS LOCAL STORAGE
+   - SVG TITLE/ACCESSIBILITY
+*/
