@@ -1,0 +1,150 @@
+/* Header */
+
+.primary-header {
+  background-color: var(--clr-primary-500);
+}
+
+.primary-header__content,
+.primary-header__student {
+  display: flex;
+  align-items: center;
+  color: var(--clr-neutral-999);
+}
+
+.primary-header__content {
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.primary-header__title {
+  font-size: 1.75rem;
+}
+
+.primary-header__student {
+  gap: 1.25rem;
+}
+
+.primary-header__image {
+  border-radius: 50%;
+}
+
+/* Aside Navigation Bar */
+
+.primary-navbar {
+  max-width: 70px;
+  padding: 1rem;
+  background: var(--clr-primary-400);
+  height: 100%;
+}
+
+.primary-navbar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+.primary-navbar__item svg {
+  fill: white;
+}
+
+/* Grid setup */
+
+.grid {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+}
+
+.subgrid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.traffic-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.traffic-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.traffic-button {
+  appearance: none;
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+}
+
+/* Secondary chart subgrid */
+
+.chart {
+  padding: 1.5rem;
+}
+
+.subcharts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: span 2;
+}
+
+.subchart {
+  border: 1px solid rgb(172, 172, 172);
+  padding: 1.5rem;
+}
+
+/* Socials Subgrid */
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.social-widget {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgb(241, 241, 241);
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.social-title {
+  font-weight: 500;
+  color: var(--clr-primary-500);
+}
+
+.social-svg {
+  padding: 1rem;
+  background: var(--clr-primary-500);
+  border-radius: 50%;
+}
+
+.social-svg svg {
+  fill: white;
+}
+
+.social-count {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+/* Utility */
+
+.section-subtitle {
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.active {
+  background: #71c464;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50vw;
+}
