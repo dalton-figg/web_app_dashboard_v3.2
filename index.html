@@ -93,7 +93,6 @@
           </ul>
         </nav>
       </aside>
-
       <section class="subgrid">
         <div class="alert">
           <p><strong>Alert:</strong> You have unread messages</p>
@@ -302,7 +301,7 @@
               <div>
                 <p>
                   Dawn Wood commented on
-                  <strong>Facebook's Chnages for 2021</strong>
+                  <strong>Facebook's Changes for 2021</strong>
                 </p>
                 <p>5 hours ago</p>
               </div>
@@ -333,24 +332,58 @@
           <div class="form-section">
             <h2 class="section-subtitle">Message User</h2>
             <form class="form">
-              <label for="user" class="sr-only">Search for User</label>
+              <label for="userSearch" class="sr-only">Search for User</label>
               <input
                 type="text"
-                id="user"
+                id="userSearch"
                 name="user"
-                placeholder="Search for User" class="form-input"
+                placeholder="Search for User"
+                class="styled-input"
               />
               <label for="message" class="sr-only">Message for User</label>
               <textarea
                 id="message"
                 name="message"
-                placeholder="Message for User" class="form-input"
+                placeholder="Message for User"
+                class="styled-input"
               ></textarea>
-              <button class="form-button" type="submit" id="submitMessage">SEND</button>
+              <button class="form-button" type="submit" id="submitMessage">
+                SEND
+              </button>
             </form>
           </div>
           <div class="settings form-section">
             <h2 class="section-subtitle">Settings</h2>
+            <form class="form">
+              <div class="form-checkboxes">
+                <label for="emailNotifs">Send Email Notifications</label>
+                <input type="checkbox" name="emailNotifs" id="emailNotifs" class="form-checkbox" />
+              </div>
+
+              <div class="form-checkboxes">
+                <label for="publicProfile">Set Profile to Public</label>
+                <input
+                  type="checkbox"
+                  name="publicProfile"
+                  id="publicProfile" class="form-checkbox"
+                />
+              </div>
+
+              <select name="timezone" id="timezone" class="styled-input">
+                <option value="select" disabled>Select Timezone</option>
+                <option value="BST">BST</option>
+                <option value="GMT">GMT</option>
+                <option value="PST">PST</option>
+                <option value="CET">CET</option>
+                <option value="UTC">UTC</option>
+              </select>
+              <div class="form-buttons">
+                <button type="submit" class="form-button">Save</button>
+                <button type="button" class="form-button form-button--cancel">
+                  Cancel
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>

@@ -179,11 +179,11 @@ const updateData = (dataset) => {
         'Aug',
         'Sep',
         'Nov',
-        'Dec'
+        'Dec',
       ];
 
       lineChartObj.data.datasets[0].data = [
-        1750, 1250, 1700, 2200, 1500, 2500, 800, 1500, 300, 2000, 1300, 1600
+        1750, 1250, 1700, 2200, 1500, 2500, 800, 1500, 300, 2000, 1300, 1600,
       ];
       break;
     }
@@ -201,7 +201,8 @@ trafficButtonsParent.addEventListener('click', (e) => {
 // Form stuff
 
 const submitMessage = document.getElementById('submitMessage');
+const searchForUserInput = document.getElementById('userSearch');
 
 submitMessage.addEventListener('click', () => {
-    // Validate the form
-})
+  // Validate the form
+});
