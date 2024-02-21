@@ -87,7 +87,6 @@
 .subcharts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-column: span 2;
 }
 
 .subchart {
@@ -99,9 +98,14 @@
 
 .socials {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 1.5rem;
+}
+
+.socials-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .social-widget {
@@ -147,4 +151,35 @@
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 50vw;
+}
+
+/* Social Activity */
+
+.social-activities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.social-activty-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid rgb(172, 172, 172);
+  padding: 1.5rem;
+}
+
+.social-activity-widget {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-activity-widget img {
+  border-radius: 50%;
+}
+
+
+.social-activity-widget p {
+  margin-left: auto;
+  font-size: 1.25rem;
 }
