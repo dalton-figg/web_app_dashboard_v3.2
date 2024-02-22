@@ -285,3 +285,28 @@ submitMessageButton.addEventListener('click', (e) => {
     messageFormUser.value = '';
   }
 });
+
+// Settings with local storage
+
+const settingsButtons = document.querySelector('.form-buttons');
+const [saveSettings, clearSettings] = settingsButtons.children;
+
+const selectTimezone = document.getElementById('timezone');
+const emailNotifications = document.getElementById('emailNotifs');
+const publicProfile = document.getElementById('publicProfile');
+
+saveSettings.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  localStorage.setItem('emailNotificationsAllowed', emailNotifications.checked);
+  localStorage.setItem('isProfilePublic', publicProfile.checked);
+  localStorage.setItem('preferredTimezone', selectTimezone.value);
+});
+
+clearSettings.addEventListener('click', () => {
+  alert('All settings cleared from local storage!');
+  localStorage.clear();
+  selectTimezone.value = 'BST';
+  emailNotifications.checked = false;
+  publicProfile.checked = false;
+});

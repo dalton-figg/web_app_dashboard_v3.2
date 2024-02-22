@@ -415,7 +415,7 @@ General spacing and arrangement of the elements matches the layout of the widget
   content: '';
   top: 50%;
   transform: translateY(-50%);
-  right: 10%;
+  left: 10%;
   width: 30px;
   height: 30px;
   background: var(--clr-neutral-999);
@@ -425,7 +425,7 @@ General spacing and arrangement of the elements matches the layout of the widget
 }
 
 .form-checkbox:checked::after {
-  left: 10%;
+  left: 65%;
 }
 
 .form-buttons {
