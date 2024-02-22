@@ -1,8 +1,8 @@
 /* 
 TODO::
+   - REFACTOR JS
    - ADD HOVER EFFECTS TO CLOSING NOTIFICATIONS MODAL
    - LOCAL STORAGE FOR SETTINGS
-   - MESSAGE FOR USER AUTO COMPLETION
    - SEND BUTTON FOR MESSAGE, INC. CONFIRMATION MESSAGE
    - DISPLAY ERROR MESSAGES IF INPUTS ARE BLANK IN MESSAGE 
    - CANCEL BUTTON CLEARS LOCAL STORAGE
@@ -265,6 +265,36 @@ searchForUserInput.addEventListener('keyup', (e) => {
 });
 
 autocompleteList.addEventListener('click', (e) => {
-  searchForUserInput.value = e.target.innerHTML;
-  autocompleteList.style.display = 'none';
+  if (e.target.tagName === 'P') {
+    searchForUserInput.value = e.target.innerHTML;
+    autocompleteList.style.display = 'none';
+  }
+});
+
+// Validate form
+
+const submitMessageButton = document.getElementById('submitMessage');
+const messageForm = submitMessageButton.parentNode;
+const messageFormInputs = Array.from(
+  messageForm.querySelectorAll('input, textarea')
+);
+
+const [messageFormUser, messageFormMessage] = messageFormInputs;
+
+const errorMessage = document.getElementById('message-error-msgs');
+
+submitMessageButton.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  if (!messageFormUser.value && !messageFormMessage.value) {
+    errorMessage.innerHTML = `Error: Both input fields are blank!`;
+  } else if (!messageFormUser.value && messageFormMessage.value) {
+    errorMessage.innerHTML = `Error: Your user input field is blank!`;
+  } else if (messageFormUser.value && !messageFormMessage.value) {
+    errorMessage.innerHTML = `Error: Your message input field is blank!`;
+  } else {
+    errorMessage.innerHTML = `Your message was successfully sent to the user ${messageFormUser.value}!`;
+    messageFormMessage.value = '';
+    messageFormUser.value = '';
+  }
 });
