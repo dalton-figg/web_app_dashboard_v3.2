@@ -421,6 +421,10 @@ General spacing and arrangement of the elements matches the layout of the widget
   background: grey;
 }
 
+#message-error-msgs {
+  display: none;
+}
+
 /* Utility */
 
 .section-subtitle {

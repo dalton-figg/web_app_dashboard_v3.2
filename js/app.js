@@ -1,10 +1,7 @@
 /* 
 TODO::
    - REFACTOR JS
-   - ADD HOVER EFFECTS TO CLOSING NOTIFICATIONS MODAL
    - LOCAL STORAGE FOR SETTINGS
-   - SEND BUTTON FOR MESSAGE, INC. CONFIRMATION MESSAGE
-   - DISPLAY ERROR MESSAGES IF INPUTS ARE BLANK IN MESSAGE 
    - CANCEL BUTTON CLEARS LOCAL STORAGE
    - SVG TITLE/ACCESSIBILITY
    - ADD ARROW TO RECENT ACTIVITY AFTER PSUEDO ELEMENT
@@ -250,18 +247,16 @@ const searchForUserInput = document.getElementById('userSearch');
 searchForUserInput.addEventListener('keyup', (e) => {
   let searchedUser = e.target.value.toLowerCase();
 
-  let matchedMembers = [];
-
-  members.forEach((member) => {
-    if (member.includes(searchedUser)) matchedMembers.push(member);
-  });
+  const matchedMembers = members.filter((member) =>
+    member.toLowerCase().includes(searchedUser)
+  );
 
   autocompleteList.style.display = 'block';
   autocompleteList.innerHTML = '';
 
-  matchedMembers.forEach((match) => {
-    autocompleteList.innerHTML += `<p>${match}</p>`;
-  });
+  autocompleteList.innerHTML = matchedMembers
+    .map((member) => `<p>${member}</p>`)
+    .join('');
 });
 
 autocompleteList.addEventListener('click', (e) => {
@@ -285,6 +280,8 @@ const errorMessage = document.getElementById('message-error-msgs');
 
 submitMessageButton.addEventListener('click', (e) => {
   e.preventDefault();
+
+  errorMessage.style.display = 'block';
 
   if (!messageFormUser.value && !messageFormMessage.value) {
     errorMessage.innerHTML = `Error: Both input fields are blank!`;
