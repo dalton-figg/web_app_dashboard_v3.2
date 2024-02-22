@@ -26,6 +26,12 @@
   cursor: pointer;
 }
 
+.primary-header__line {
+  height: 35px;
+  width: 1px;
+  background: rgba(211, 211, 211, 0.611);
+}
+
 .primary-header__notifications:hover {
   transform: rotate(-5deg) scale(1.2);
 }
@@ -40,20 +46,36 @@
   content: '';
   position: absolute;
   top: 10%;
-  right: 82%;
+  right: 85%;
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background: rgb(255, 56, 56);
   border-radius: 50%;
 }
 
 .primary-header__title {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .primary-header__title {
+    font-size: 1.5rem;
+  }
 }
 
 .primary-header__student {
-  gap: 1.25rem;
+  gap: 0.75rem;
+}
+
+.primary-header__student p {
+  max-width: min-content;
+}
+
+@media only screen and (min-width: 768px){
+  .primary-header__student p {
+    max-width: 75ch;
+  }
 }
 
 .primary-header__image {
