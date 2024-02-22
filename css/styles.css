@@ -99,10 +99,24 @@
 }
 
 .subgrid {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  display: grid;
   gap: 1.5rem;
+}
+
+.dashboard {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.dashboard p {
+  padding: 1rem;
+}
+
+.dashboard-bg {
+  width: 100%;
+  background: rgb(245, 245, 245);
+  border-left: 1px solid #a6a6a6;
+  border-bottom: 1px solid #a6a6a6;
 }
 
 .alert {

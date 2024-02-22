@@ -1,12 +1,3 @@
-/* 
-TODO::
-   - REFACTOR JS
-   - LOCAL STORAGE FOR SETTINGS
-   - CANCEL BUTTON CLEARS LOCAL STORAGE
-   - SVG TITLE/ACCESSIBILITY
-   - FIX 1024 VISUALS AND 320 HEADER
-*/
-
 const lineChart = document.getElementById('line-chart');
 const barChart = document.getElementById('bar-chart');
 const pieChart = document.getElementById('pie-chart');
