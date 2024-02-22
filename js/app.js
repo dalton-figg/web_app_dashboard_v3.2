@@ -1,3 +1,16 @@
+/* 
+TODO::
+   - ADD HOVER EFFECTS TO CLOSING NOTIFICATIONS MODAL
+   - LOCAL STORAGE FOR SETTINGS
+   - MESSAGE FOR USER AUTO COMPLETION
+   - SEND BUTTON FOR MESSAGE, INC. CONFIRMATION MESSAGE
+   - DISPLAY ERROR MESSAGES IF INPUTS ARE BLANK IN MESSAGE 
+   - CANCEL BUTTON CLEARS LOCAL STORAGE
+   - SVG TITLE/ACCESSIBILITY
+   - ADD ARROW TO RECENT ACTIVITY AFTER PSUEDO ELEMENT
+   - FIX 1024 VISUALS AND 320 HEADER
+*/
+
 const lineChart = document.getElementById('line-chart');
 const barChart = document.getElementById('bar-chart');
 const pieChart = document.getElementById('pie-chart');
@@ -193,18 +206,12 @@ const updateData = (dataset) => {
 };
 
 trafficButtonsParent.addEventListener('click', (e) => {
-  resetButtonClasses();
-  setActiveButton(e.target);
-  updateData(e.target.innerHTML);
-});
-
-// Form stuff
-
-const submitMessage = document.getElementById('submitMessage');
-const searchForUserInput = document.getElementById('userSearch');
-
-submitMessage.addEventListener('click', () => {
-  // Validate the form
+  // Fixes a bug where clicking on the parent element causes issues
+  if (e.target.className === 'traffic-button') {
+    resetButtonClasses();
+    setActiveButton(e.target);
+    updateData(e.target.innerHTML);
+  }
 });
 
 // Includes an alert icon in the header with a marker to notify the user of new alerts and messages.
@@ -234,15 +241,30 @@ const closeAlert = document.getElementById('closeAlert');
 
 closeAlert.addEventListener('click', () => alertBanner.remove());
 
-/* 
-TODO::
-   - FIX TRAFFIC TAB BUTTONS BUG
-   - ADD HOVER EFFECTS TO CLOSING NOTIFICATIONS MODAL
-   - LOCAL STORAGE FOR SETTINGS
-   - MESSAGE FOR USER AUTO COMPLETION
-   - SEND BUTTON FOR MESSAGE, INC. CONFIRMATION MESSAGE
-   - DISPLAY ERROR MESSAGES IF INPUTS ARE BLANK IN MESSAGE 
-   - CANCEL BUTTON CLEARS LOCAL STORAGE
-   - SVG TITLE/ACCESSIBILITY
-   - ADD ARROW TO RECENT ACTIVITY AFTER PSUEDO ELEMENT
-*/
+// Message User autocompletion
+
+const members = ['victoria chambers', 'dale byrd', 'dawn wood', 'dan oliver'];
+const autocompleteList = document.querySelector('.autocompleted-users');
+const searchForUserInput = document.getElementById('userSearch');
+
+searchForUserInput.addEventListener('keyup', (e) => {
+  let searchedUser = e.target.value.toLowerCase();
+
+  let matchedMembers = [];
+
+  members.forEach((member) => {
+    if (member.includes(searchedUser)) matchedMembers.push(member);
+  });
+
+  autocompleteList.style.display = 'block';
+  autocompleteList.innerHTML = '';
+
+  matchedMembers.forEach((match) => {
+    autocompleteList.innerHTML += `<p>${match}</p>`;
+  });
+});
+
+autocompleteList.addEventListener('click', (e) => {
+  searchForUserInput.value = e.target.innerHTML;
+  autocompleteList.style.display = 'none';
+});

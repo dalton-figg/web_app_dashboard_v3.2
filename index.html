@@ -342,7 +342,7 @@
         <div class="forms" id="settings">
           <div class="form-section">
             <h2 class="section-subtitle">Message User</h2>
-            <form class="form">
+            <form class="form" autocomplete="off">
               <label for="userSearch" class="sr-only">Search for User</label>
               <input
                 type="text"
@@ -352,6 +352,7 @@
                 class="styled-input"
               />
               <label for="message" class="sr-only">Message for User</label>
+              <div class="autocompleted-users"></div>
               <textarea
                 id="message"
                 name="message"
