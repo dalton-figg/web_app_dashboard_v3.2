@@ -72,7 +72,7 @@
   max-width: min-content;
 }
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) {
   .primary-header__student p {
     max-width: 75ch;
   }
