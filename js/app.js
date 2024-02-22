@@ -295,18 +295,25 @@ const selectTimezone = document.getElementById('timezone');
 const emailNotifications = document.getElementById('emailNotifs');
 const publicProfile = document.getElementById('publicProfile');
 
-saveSettings.addEventListener('click', (e) => {
+const saveSettingsHandler = (e) => {
   e.preventDefault();
 
-  localStorage.setItem('emailNotificationsAllowed', emailNotifications.checked);
-  localStorage.setItem('isProfilePublic', publicProfile.checked);
-  localStorage.setItem('preferredTimezone', selectTimezone.value);
-});
+  const { checked: emailNotificationsChecked } = emailNotifications;
+  const { checked: publicProfileChecked } = publicProfile;
+  const preferredTimezone = selectTimezone.value;
 
-clearSettings.addEventListener('click', () => {
+  localStorage.setItem('emailNotificationsAllowed', emailNotificationsChecked);
+  localStorage.setItem('isProfilePublic', publicProfileChecked);
+  localStorage.setItem('preferredTimezone', preferredTimezone);
+};
+
+const clearSettingsHandler = () => {
   alert('All settings cleared from local storage!');
   localStorage.clear();
   selectTimezone.value = 'BST';
   emailNotifications.checked = false;
   publicProfile.checked = false;
-});
+};
+
+saveSettings.addEventListener('click', saveSettingsHandler);
+clearSettings.addEventListener('click', clearSettingsHandler);
