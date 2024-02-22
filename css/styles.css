@@ -299,6 +299,19 @@ General spacing and arrangement of the elements matches the layout of the widget
   font-size: 1rem;
 }
 
+.social-activity-widget div a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .social-activity-container:nth-of-type(2) .social-activity-widget::after {
+    content: '>';
+    font-size: 1.5rem;
+    color: var(--clr-primary-500);
+    font-weight: bold;
+  }
+}
+
 /* A mobile-first approach is utilized using min-width properties for media queries. */
 
 /* Appropriate media queries are in place and the content responds to mobile (320px), tablet (768px) and desktop (1024px) screen sizes. */
