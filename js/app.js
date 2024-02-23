@@ -298,8 +298,8 @@ const publicProfile = document.getElementById('publicProfile');
 const saveSettingsHandler = (e) => {
   e.preventDefault();
 
-  const { checked: emailNotificationsChecked } = emailNotifications;
-  const { checked: publicProfileChecked } = publicProfile;
+  const emailNotificationsChecked  = emailNotifications.checked;
+  const publicProfileChecked = publicProfile.checked;
   const preferredTimezone = selectTimezone.value;
 
   localStorage.setItem('emailNotificationsAllowed', emailNotificationsChecked);
@@ -317,3 +317,20 @@ const clearSettingsHandler = () => {
 
 saveSettings.addEventListener('click', saveSettingsHandler);
 clearSettings.addEventListener('click', clearSettingsHandler);
+
+// Set settings on page load
+
+if (localStorage.getItem('emailNotificationsAllowed')) {
+  const emailNotificationsAllowed =
+    localStorage.getItem('emailNotificationsAllowed') === 'true';
+  emailNotifications.checked = emailNotificationsAllowed;
+}
+
+if (localStorage.getItem('preferredTimezone')) {
+  selectTimezone.value = localStorage.getItem('preferredTimezone');
+}
+
+if (localStorage.getItem('isProfilePublic')) {
+  const isProfilePublicChecked = localStorage.getItem('isProfilePublic') === 'true';
+  publicProfile.checked = isProfilePublicChecked; 
+}
